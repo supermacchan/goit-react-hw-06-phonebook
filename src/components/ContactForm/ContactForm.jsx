@@ -24,11 +24,6 @@ export const ContactForm = ({ onSubmit }) => {
 
     const handleFormSubmit = event => {
         event.preventDefault();
-        // const newContact = {
-        //     name,
-        //     number,
-        // }
-        // onSubmit(newContact);
         dispatch(addContact(name, number));
         reset();
     }
