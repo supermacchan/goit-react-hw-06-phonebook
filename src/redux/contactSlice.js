@@ -2,11 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 import { toast } from 'react-toastify';
 
-// const state = {
-//   contacts: [],
-//   filter: "",
-// };
-
 const contactSlice = createSlice({
   name: "contacts",
   initialState: [],
