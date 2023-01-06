@@ -12,8 +12,8 @@ export const ContactList = () => {
     const dispatch = useDispatch();
 
     const getFilteredContacts = () => {
-        const normalizedFilter = filter.toLowerCase();
-        return contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
+        // const normalizedFilter = filter.toLowerCase();
+        return contacts.filter(contact => contact.name.toLowerCase().includes(filter));
     };
 
     const filteredContacts = getFilteredContacts();
