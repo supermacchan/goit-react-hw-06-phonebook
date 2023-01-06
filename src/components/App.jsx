@@ -1,25 +1,16 @@
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
 // import { nanoid } from "nanoid";
 import { ToastContainer } from 'react-toastify';
 
 import { ContactForm } from "./ContactForm/ContactForm";
 import { Filter } from "./Filter/Filter";
 import { ContactList } from "./ContactList/ContactList";
-import { addContact, deleteContact } from "redux/contactSlice";
 
 import 'react-toastify/dist/ReactToastify.css';
 import css from './App.module.css';
 
 
 export const App = () => {
-  const dispatch = useDispatch();
-  // onSumbit={dispatch(addContact())};
-  const contactList = useSelector(state => state.contacts);
-  console.log(contactList);
-  console.log(addContact());
-
-
   // const [contacts, setContacts] = useState(() => {
   //   return JSON.parse(window.localStorage.getItem('contacts')) ?? [];
   // });
@@ -54,9 +45,9 @@ export const App = () => {
   //   });  
   // };
 
-  const changeFilter = event => {
-    setFilter(event.currentTarget.value);
-  };
+  // const changeFilter = event => {
+  //   setFilter(event.currentTarget.value);
+  // };
 
   // const getFilteredContacts = () => {
   //   const normalizedFilter = filter.toLowerCase();
@@ -74,10 +65,7 @@ export const App = () => {
         <ContactForm />
 
         <h2 className={css.contacts__title}>Contacts</h2>
-        <Filter
-          value={filter}
-          onChange={changeFilter}
-        />
+        <Filter />
         <ContactList />
 
         <ToastContainer
