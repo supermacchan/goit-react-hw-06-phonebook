@@ -15,7 +15,7 @@ const contactSlice = createSlice({
       reducer(state, action) {
         const contactsNames = state.map(contact => contact.name);
         if(contactsNames.includes(action.payload.name)) {
-          toast.error(`${contactsNames} is already in contacts.`);
+          toast.error(`${action.payload.name} is already in contacts.`);
           return;
         }
         state.unshift(action.payload);
@@ -31,8 +31,7 @@ const contactSlice = createSlice({
       },
     },
     deleteContact(state, action) {
-      // const index = state.findIndex(contact => contact.id === action.payload);
-      const index = state.filter(contact => contact.id !== action.payload.id);
+      const index = state.findIndex(contact => contact.id === action.payload);
       state.splice(index, 1);
     },
   },
