@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './ContactListItem.module.css';
 
-export const ContactListItem = ({ data: {id, name, number}, onDeleteContact }) => {
+export const ContactListItem = ({ contact: {id, name, number}, onDeleteContact }) => {
     return (
         <li className={css.contacts__listItem} >
             <span>{name}: {number}</span>
@@ -16,9 +16,8 @@ export const ContactListItem = ({ data: {id, name, number}, onDeleteContact }) =
     );
 };
 
-
 ContactListItem.propTypes = {
-    data: PropTypes.shape({
+    contact: PropTypes.shape({
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         number: PropTypes.string.isRequired,
