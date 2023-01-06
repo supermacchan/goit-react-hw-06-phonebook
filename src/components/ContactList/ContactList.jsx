@@ -11,12 +11,8 @@ export const ContactList = () => {
     const filter = useSelector(getFilter);
     const dispatch = useDispatch();
 
-    const getFilteredContacts = () => {
-        // const normalizedFilter = filter.toLowerCase();
-        return contacts.filter(contact => contact.name.toLowerCase().includes(filter));
-    };
-
-    const filteredContacts = getFilteredContacts();
+    // const normalizedFilter = filter.toLowerCase();
+    const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(filter));
 
     console.log(contacts);
     console.log(filter);
@@ -25,11 +21,14 @@ export const ContactList = () => {
         dispatch(deleteContact(id));
     }
 
+    const check = () => {return filteredContacts.map(contact => console.log(contact.id))};
+    check();
+
     return (
         <ul className={css.contacts__list}>
             {filteredContacts.map(contact =>
                 <ContactListItem
-                    data={contact}
+                    contact={contact}
                     onDeleteContact={deletingContact}
                     key={contact.id}
                 />
