@@ -25,9 +25,9 @@ export const App = () => {
   // });
   const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
+  // }, [contacts]);
 
   // const formSubmitHandler = ({ name, number }) => {
   //   // const availabilityCheck = checkContact(name);
@@ -58,10 +58,10 @@ export const App = () => {
     setFilter(event.currentTarget.value);
   };
 
-  const getFilteredContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
-  };
+  // const getFilteredContacts = () => {
+  //   const normalizedFilter = filter.toLowerCase();
+  //   return contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
+  // };
 
   // const deletingContact = id => {
   //   dispatch(deleteContact(id));
@@ -78,9 +78,7 @@ export const App = () => {
           value={filter}
           onChange={changeFilter}
         />
-        <ContactList
-          contacts={getFilteredContacts()}
-        />
+        <ContactList />
 
         <ToastContainer
           position="top-right"
