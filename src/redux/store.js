@@ -12,11 +12,13 @@ import {
     PURGE,
     REGISTER,
   } from 'redux-persist';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 const persistConfig = {
     key: 'root',
     storage,
     blacklist: ['filter'],
+    stateReconciler: autoMergeLevel2,
 };
 
 const rootReducer = combineReducers({
